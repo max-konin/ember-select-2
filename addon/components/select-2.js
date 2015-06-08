@@ -51,6 +51,7 @@ var Select2Component = Ember.Component.extend({
   minimumInputLength: null,
   maximumInputLength: null,
   valueSeparator: ',',
+  language: 'en',
 
   // internal state
   _hasSelectedMissingItems: false,
@@ -81,6 +82,7 @@ var Select2Component = Ember.Component.extend({
     options.minimumResultsForSearch = this.get('searchEnabled') ? 0 : -1 ;
     options.minimumInputLength = this.get('minimumInputLength');
     options.maximumInputLength = this.get('maximumInputLength');
+    options.language = this.get('language');
 
     // ensure there is a value separator if needed (= when in multiple selection with value binding)
     var missesValueSeperator = this.get('multiple') && this.get('optionValuePath') && !this.get('valueSeparator');
